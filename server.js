@@ -18,12 +18,12 @@ app.use((req, res, next) => {
     next();
 });
 
-app.use((req, res, next) => {
-    res.render('maint.hbs', {
-        title: "We'll brb",
-        welcome: "gtfo"
-    })
-});
+// app.use((req, res, next) => {
+//     res.render('maint.hbs', {
+//         title: "We'll brb",
+//         welcome: "gtfo"
+//     })
+// });
 
 app.use(express.static(__dirname + '/public'));
 
@@ -45,6 +45,13 @@ app.get('/', (req, res) => {
 app.get('/about', (req, res) => {
     res.render('about.hbs', {
         title: "About Page"
+    })
+})
+
+app.get('/projects', (req, res) => {
+    res.render('projects.hbs', {
+        title: "Projects Page",
+        welcome: "This is the projects page!"
     })
 })
 
